@@ -25,6 +25,8 @@ def test():
     a = daily(symbol)
     data = a.get_daily_data()
     print("alphavantage status ", a.r.status_code)
+    if a.r.status_code != 200:
+        raise Exception("Error in getting data from alphavantage")
 
 if __name__ == '__main__':
     test()
