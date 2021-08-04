@@ -127,8 +127,7 @@ def run_jobs():
         new_daily = alphavantage.daily(stock.ticker)
         new_daily.get_data()
         if new_daily.r.status_code != 200:
-            #TODO message error
-            pass
+            message = "Error collecting stock data!!"
         else:
             if new_daily.get_daily_data()[0].get("4. close") > stock.high_close:
                 stock.high_close = new_daily.get_daily_data()[0].get("4. close")

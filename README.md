@@ -5,7 +5,9 @@ This is a flask app that uses twilio and alphavantage apis to calculate a traili
 ## Endpoints
 
 ### POST {url}/add
+
 ### parameters
+
 - ticker required, must be a valid ticker symbol. 
 - percent required, whole digit number representing a percentage for the trailing stop loss notification
 
@@ -16,7 +18,9 @@ This is a flask app that uses twilio and alphavantage apis to calculate a traili
 }
 
 ### POST {url}/rm
+
 ### parameters
+
 - ticker required, ticker symbol to remove from list
 
 {
@@ -29,21 +33,30 @@ This is a flask app that uses twilio and alphavantage apis to calculate a traili
 Returns the list of stocks that the application is monitoring
 
 ### POST {url}/settings
+
 ### parameters
+
 Times represent when the application collects stock data and sends it to the phone nubmer.
+
 - hour optional, modify hour of execution
 - minute optional, modify minute of execution
 - day, optional, modify day of execution, can be * to represent every day
 - phone, optional, modify 10 digit US phone number to send notifications
 
-## defaults
-### secret file
-defaults are set using a secrets file. A plain text file named secret.py should be created in the project root. 
-several configuration items need to be inserted 
-1. twilio_sid = Your twilio SID
-2. twilio_token = Your twilio Token
-3. twilio_number = Your twilio phone number (with +1)
-4. phone_number = Your target phone number
-5. username = username for basic auth, commented by default (interfering with unit tests)
-6. password = password for basic auth, commented by default (interfering with unit tests)
+## Configuration
+
+### Settings
+
+The default trigger is for 4:15 just after the stock market closes. These times are in local time.
+
+### Environment Variables
+
+environment variables should be created for the following configuration items. 
+
+1. TW_SID = Your twilio SID
+2. TW_TOKEN = Your twilio Token
+3. TW_NUMBER = Your twilio phone number (with +1)
+4. PHONE_NUMBER = Your target phone number
+5. USERNAME = username for basic auth, commented by default (interfering with unit tests)
+6. PASSWORD = password for basic auth, commented by default (interfering with unit tests)
 
