@@ -23,7 +23,7 @@ def test():
     twilio_client.send_message(secret.phone_number, 'Hello from Python!')
     print("twilio status ", twilio_client.r.status_code)
     if twilio_client.r.status_code != 200:
-        raise Exception('Bad status code from twilio: {}'.format(twilio_client.r.status_code))
+        raise Exception('Bad status code from twilio')
         
 
 if __name__ == '__main__':
