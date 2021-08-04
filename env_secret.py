@@ -7,6 +7,6 @@ alphavantage_key = os.environ.get("AV_key")
 
 twilio_sid = os.environ.get("TW_sid")
 twilio_token = os.environ.get("TW_token")
-twilio_number = os.environ.get("TW_number")
+twilio_number = "+1" + os.environ.get("TW_number")
 
-phone_number = os.environ.get("phone_number")
+phone_number = "+1" + os.environ.get("phone_number")
