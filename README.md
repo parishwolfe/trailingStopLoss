@@ -34,7 +34,7 @@ This is a flask app that uses twilio and alphavantage apis to calculate a traili
 Returns the list of stocks that the application is monitoring
 
 {
-    "user": null,
+    "user": admin,
     "time": "Wed, 04 Aug 2021 14:47:03 GMT",
     "message": "UPRO"
 }
@@ -49,6 +49,12 @@ Times represent when the application collects stock data and sends it to the pho
 - minute optional, modify minute of execution
 - day, optional, modify day of execution, can be * to represent every day
 - phone, optional, modify 10 digit US phone number to send notifications
+
+{
+    "user": admin,
+    "time": "Wed, 04 Aug 2021 14:47:56 GMT",
+    "message": "Settings updated"
+}
 
 ## Configuration
 
