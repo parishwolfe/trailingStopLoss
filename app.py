@@ -7,7 +7,7 @@
 
 from flask import Flask, jsonify, request
 from flask_basicauth import BasicAuth
-import env_secret
+import env_secret as secret
 from datetime import datetime
 stocks = []
 app = Flask(__name__)

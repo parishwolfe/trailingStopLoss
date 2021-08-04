@@ -1,5 +1,5 @@
 import requests
-import env_secret
+import env_secret as secret
 
 class twilio():
     def __init__(self):

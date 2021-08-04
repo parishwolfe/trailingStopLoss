@@ -1,11 +1,7 @@
 
+from app import app
+import unittest
 
-
-try:
-    from app import app
-    import unittest
-except Exception as e:
-    print(e)
 
 class FlaskTest(unittest.TestCase):
     #Test Settings with no paramaters    
