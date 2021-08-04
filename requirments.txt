@@ -1,3 +1,4 @@
 Flask
 Flask-BasicAuth
 flask_apscheduler
+Flask-Testing
