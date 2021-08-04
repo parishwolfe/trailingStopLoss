@@ -30,7 +30,14 @@ This is a flask app that uses twilio and alphavantage apis to calculate a traili
 }
 
 ### GET {url}/ls
+
 Returns the list of stocks that the application is monitoring
+
+{
+    "user": null,
+    "time": "Wed, 04 Aug 2021 14:47:03 GMT",
+    "message": "UPRO"
+}
 
 ### POST {url}/settings
 
