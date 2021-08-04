@@ -24,7 +24,7 @@ def test():
     symbol = 'MSFT'
     a = daily(symbol)
     data = a.get_daily_data()
-    print(data)
+    print("alphavantage status ", daily.r.status_code)
 
 if __name__ == '__main__':
     test()

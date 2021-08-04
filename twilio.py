@@ -14,11 +14,13 @@ class twilio():
             'To': to_number,
             'Body': message
         }
-        return requests.post(url, auth=(self.account_sid, self.auth_token), data=payload)
+        self.r = requests.post(url, auth=(self.account_sid, self.auth_token), data=payload)
+        return self.r
 
 def test():
     twilio_client = twilio()
     twilio_client.send_message(secret.phone_number, 'Hello from Python!')
+    print("twilio status ", twilio_client.r.status_code)
 
 if __name__ == '__main__':
     test()
