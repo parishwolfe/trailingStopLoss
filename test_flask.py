@@ -46,6 +46,26 @@ class FlaskTest(unittest.TestCase):
         response = tester.post('/settings?day=1')
         self.assertEqual(response.status_code, 200)
 
+    #Test add stock
+    def test_add_stock(self):
+        tester = app.test_client(self)
+        response = tester.post('/add?ticker=UPRO&percent=20')
+        self.assertEqual(response.status_code, 200)
+
+    #test remove stock
+    def test_remove_stock(self):
+        tester = app.test_client(self)
+        response = tester.post('/add?ticker=UPRO&percent=20')
+        self.assertEqual(response.status_code, 200)
+        response = tester.post('/rm?ticker=UPRO')
+        self.assertEqual(response.status_code, 200)
+
+    def test_list_stock(self):
+        tester = app.test_client(self)
+        response = tester.post('/add?ticker=UPRO&percent=20')
+        self.assertEqual(response.status_code, 200)
+        response = tester.get("/ls")
+        self.assertEqual(response.status_code, 200)
 
     
 if __name__ == '__main__':

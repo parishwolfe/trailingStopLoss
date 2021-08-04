@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "3cbb7c29-9a41-42d0-bd5d-2c95f8132d67",
+		"name": "trailingStopLoss",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "change settings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8085/settings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8085",
+					"path": [
+						"settings"
+					],
+					"query": [
+						{
+							"key": "hour",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "minute",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "day",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "5555555555",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list tickers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8085/ls",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8085",
+					"path": [
+						"ls"
+					],
+					"query": [
+						{
+							"key": "ticker",
+							"value": "UPRO",
+							"disabled": true
+						},
+						{
+							"key": "percent",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add ticker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8085/add?ticker=UDOW&percent=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8085",
+					"path": [
+						"add"
+					],
+					"query": [
+						{
+							"key": "ticker",
+							"value": "UDOW"
+						},
+						{
+							"key": "percent",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove ticker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8085/rm?ticker=UPRO",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8085",
+					"path": [
+						"rm"
+					],
+					"query": [
+						{
+							"key": "ticker",
+							"value": "UPRO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "1234",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

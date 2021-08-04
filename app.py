@@ -75,7 +75,12 @@ def list_stocks():
     global stocks
     if len(stocks) == 0:
         return response_template("No stocks")
-    return response_template(f"{stocks}")
+    else:
+        result = ""
+        for stock in stocks:
+            result += f"{stock.ticker}, "
+        result = result[:-2]
+    return response_template(result)
 
 @app.route('/settings', methods=["POST"])
 #@basic_auth.required
