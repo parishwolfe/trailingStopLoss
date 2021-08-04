@@ -134,9 +134,9 @@ def run_jobs():
                 #message = f"{stock.ticker} is at {stock.high_close} today"
             else:
                 decrease = stock.high_close - new_daily.get_daily_data()[0].get("4. close")
-                percent_decrease = (decrease / stock.high_close) * 100
+                percent_decrease = (decrease / stock.high_close)
                 if percent_decrease > stock.percent:
-                    message += f"{stock.ticker} is at {stock.high_close} today, {percent_decrease}% decrease\n"
+                    message += f"{stock.ticker} is at {stock.high_close} today, {percent_decrease * 100}% decrease\n"
     if message != None:
         global phone_number
         notification = twilio.twilio()
