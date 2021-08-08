@@ -11,7 +11,6 @@ twilio_number = os.getenv("TW_NUMBER")
 
 phone_number = os.getenv("PHONE_NUMBER")
 
-print("test", os.getenv("TEST"))
 
 
 #cspell:ignore getenv twilio
