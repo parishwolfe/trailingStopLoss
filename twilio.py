@@ -5,6 +5,7 @@ except ImportError:
     #import env_secret as secret
     pass
 import env_secret
+import env_secret as secret
 
 class twilio():
     def __init__(self):
