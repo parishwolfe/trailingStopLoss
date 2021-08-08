@@ -32,6 +32,8 @@ jobs:
           python3 -m pip install -r requirements.txt
 
       - name: Run Tests
+        env: 
+          TEST: ${{ secrets.TEST }}
         run: |
           python3 test_flask.py
           python3 twilio.py
