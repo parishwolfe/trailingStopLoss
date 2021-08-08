@@ -26,7 +26,7 @@ def test():
     data = a.get_daily_data()
     print("alphavantage status ", a.r.status_code)
     if a.api_key == None:
-        raise Exception("alphavantage key is null")
+        print("alphavantage key is null")
     if a.r.status_code != 200:
         raise Exception("Error in getting data from alphavantage")
 
