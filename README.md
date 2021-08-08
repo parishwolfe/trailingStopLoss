@@ -1,6 +1,6 @@
 # trailingStopLoss
 
-This is a flask app that uses twilio and alphavantage apis to calculate a trailing stop loss on up to three stocks that you supply via the endpoints. 
+This is a flask app that uses twilio and alphavantage apis to calculate a trailing stop loss on up to three stocks that you supply via the endpoints. A trailing stop loss is a a specified moving percentage that moves up as the price of the security moves up in value. Typically a stop loss would trigger a sell operation at a brokerage, however, not all brokerages support trailing stop loss hence this project. 
 
 ## Endpoints
 
