@@ -24,7 +24,10 @@ def test():
     print("twilio status ", twilio_client.r.status_code)
     if twilio_client.r.status_code != 201:
         #raise Exception('Bad status code from twilio')
-        pass        
+        print(len(twilio_client.account_sid))
+        print(len(twilio_client.auth_token))
+        print(len(twilio_client.from_number))
+        pass
 
 if __name__ == '__main__':
     test()
