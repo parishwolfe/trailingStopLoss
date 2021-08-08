@@ -1,5 +1,8 @@
 import requests
-import env_secret as secret
+try:
+    import secret
+except ImportError: 
+    import env_secret as secret
 #import secret
 
 class twilio():
