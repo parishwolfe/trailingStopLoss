@@ -2,14 +2,15 @@ import requests
 try:
     import secret
 except ImportError: 
-    import env_secret as secret
-#import secret
+    #import env_secret as secret
+    pass
+import env_secret
 
 class twilio():
     def __init__(self):
-        self.account_sid = secret.twilio_sid
-        self.auth_token = secret.twilio_token
-        self.from_number = secret.twilio_number
+        self.account_sid = env_secret.twilio_sid
+        self.auth_token = env_secret.twilio_token
+        self.from_number = env_secret.twilio_number
 
     def send_message(self, to_number, message):
         url = 'https://api.twilio.com/2010-04-01/Accounts/{}/Messages.json'.format(self.account_sid)
