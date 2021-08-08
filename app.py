@@ -110,7 +110,7 @@ def settings():
     app.apscheduler.remove_job(id=job_version)
     job_version = str(int(job_version) + 1)
 
-    app.apscheduler.add_job(func=run_jobs, trigger='cron', hour=h, minute=m, day=d, id=job_version)
+    app.apscheduler.add_job(func=run_jobs, trigger='cron', hour=h, minute=m, day=d, id=job_version) #, second=5)
     return response_template("Settings updated"), 200
 
 
@@ -131,7 +131,7 @@ def run_jobs():
         else:
             if new_daily.get_daily_data()[0].get("4. close") > stock.high_close:
                 stock.high_close = new_daily.get_daily_data()[0].get("4. close")
-                #message = f"{stock.ticker} is at {stock.high_close} today"
+                #message = f"{stock.ticker} is at {stock.high_close} today\n"
             else:
                 decrease = stock.high_close - new_daily.get_daily_data()[0].get("4. close")
                 percent_decrease = (decrease / stock.high_close)
@@ -143,11 +143,16 @@ def run_jobs():
         notification.send_message(phone_number, "Urgent stock notification!!\n" + message)
     
     
-
+def test():
+    print("hi")
 
 @app.route('/')
 def index():
     return "See the documentation in the repo"
+
+### FOR THE DEMO ###
+app.apscheduler.add_job(func=test, trigger='cron', id="test_demo", second="*")
+### FOR THE DEMO ###
 
 app.apscheduler.add_job(func=run_jobs, trigger='cron', id=job_version, day="*", hour="4", minute="15") #second=None, minute="*" #day="*", hour="*", minute="*"
 if __name__ == '__main__':
