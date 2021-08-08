@@ -2,10 +2,8 @@ import requests
 try:
     import secret
 except ImportError: 
-    #import env_secret as secret
-    pass
-import env_secret
-import env_secret as secret
+    import env_secret as secret
+
 
 class twilio():
     def __init__(self):
@@ -29,14 +27,7 @@ def test():
     print("twilio status ", twilio_client.r.status_code)
     if twilio_client.r.status_code != 201:
         #raise Exception('Bad status code from twilio')
-        if twilio_client.account_sid == None:
-            print("SID is None")
-        if twilio_client.auth_token == None:
-            print("Token is None")
-        if twilio_client.from_number == None:
-            print("From is None")
-        if secret.phone_number is None:
-            print("Phone number is None")
+
         pass
 
 if __name__ == '__main__':
