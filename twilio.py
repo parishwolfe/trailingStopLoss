@@ -35,6 +35,8 @@ def test():
             print("Token is None")
         if twilio_client.from_number == None:
             print("From is None")
+        if secret.phone_number is None:
+            print("Phone number is None")
         pass
 
 if __name__ == '__main__':
