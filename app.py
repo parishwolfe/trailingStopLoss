@@ -120,6 +120,8 @@ class stock():
         self.percent = percent * 0.01
         self.high_close = 0
 
+#TODO pull stock calculation to a function and write tests for it
+
 def run_jobs():
     global stocks
     message = None
