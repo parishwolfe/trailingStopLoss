@@ -1,12 +1,15 @@
 import os
 
-username = os.environ.get('USERNAME')
-password = os.environ.get('PASSWORD')
+username = os.getenv('USERNAME')
+password = os.getenv('PASSWORD')
 
-alphavantage_key = os.environ.get("AV_KEY")
+alphavantage_key = os.getenv("AV_KEY")
 
-twilio_sid = os.environ.get("TW_SID")
-twilio_token = os.environ.get("TW_TOKEN")
-twilio_number = os.environ.get("TW_NUMBER")
+twilio_sid = os.getenv("TW_SID")
+twilio_token = os.getenv("TW_TOKEN")
+twilio_number = os.getenv("TW_NUMBER")
 
-phone_number = os.environ.get("PHONE_NUMBER")
+phone_number = os.getenv("PHONE_NUMBER")
+
+
+#cspell:ignore getenv twilio
