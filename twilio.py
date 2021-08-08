@@ -7,9 +7,9 @@ except ImportError:
 
 class twilio():
     def __init__(self):
-        self.account_sid = env_secret.twilio_sid
-        self.auth_token = env_secret.twilio_token
-        self.from_number = env_secret.twilio_number
+        self.account_sid = secret.twilio_sid
+        self.auth_token = secret.twilio_token
+        self.from_number = secret.twilio_number
 
     def send_message(self, to_number, message):
         url = 'https://api.twilio.com/2010-04-01/Accounts/{}/Messages.json'.format(self.account_sid)
@@ -27,7 +27,6 @@ def test():
     print("twilio status ", twilio_client.r.status_code)
     if twilio_client.r.status_code != 201:
         #raise Exception('Bad status code from twilio')
-
         pass
 
 if __name__ == '__main__':
